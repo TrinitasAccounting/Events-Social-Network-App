@@ -1,0 +1,15 @@
+/home/clay/Events-Social-Network/Persistence/bin/Debug/net9.0/Persistence.deps.json
+/home/clay/Events-Social-Network/Persistence/bin/Debug/net9.0/Persistence.dll
+/home/clay/Events-Social-Network/Persistence/bin/Debug/net9.0/Persistence.pdb
+/home/clay/Events-Social-Network/Persistence/bin/Debug/net9.0/Domain.dll
+/home/clay/Events-Social-Network/Persistence/bin/Debug/net9.0/Domain.pdb
+/home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/Persistence.csproj.AssemblyReference.cache
+/home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/Persistence.GeneratedMSBuildEditorConfig.editorconfig
+/home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/Persistence.AssemblyInfoInputs.cache
+/home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/Persistence.AssemblyInfo.cs
+/home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/Persistence.csproj.CoreCompileInputs.cache
+/home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/Persiste.61C28332.Up2Date
+/home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/Persistence.dll
+/home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/refint/Persistence.dll
+/home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/Persistence.pdb
+/home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/ref/Persistence.dll

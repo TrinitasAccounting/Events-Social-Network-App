@@ -1,0 +1,11 @@
+/home/clay/Events-Social-Network/Domain/bin/Debug/net9.0/Domain.deps.json
+/home/clay/Events-Social-Network/Domain/bin/Debug/net9.0/Domain.dll
+/home/clay/Events-Social-Network/Domain/bin/Debug/net9.0/Domain.pdb
+/home/clay/Events-Social-Network/Domain/obj/Debug/net9.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/clay/Events-Social-Network/Domain/obj/Debug/net9.0/Domain.AssemblyInfoInputs.cache
+/home/clay/Events-Social-Network/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs
+/home/clay/Events-Social-Network/Domain/obj/Debug/net9.0/Domain.csproj.CoreCompileInputs.cache
+/home/clay/Events-Social-Network/Domain/obj/Debug/net9.0/Domain.dll
+/home/clay/Events-Social-Network/Domain/obj/Debug/net9.0/refint/Domain.dll
+/home/clay/Events-Social-Network/Domain/obj/Debug/net9.0/Domain.pdb
+/home/clay/Events-Social-Network/Domain/obj/Debug/net9.0/ref/Domain.dll
