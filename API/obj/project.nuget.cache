@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2vpwkdO93U0=",
+  "dgSpecHash": "PQ+XtGP2fU4=",
   "success": true,
   "projectFilePath": "/home/clay/Events-Social-Network/API/API.csproj",
-  "expectedPackageFiles": [
-    "/home/clay/.nuget/packages/microsoft.aspnetcore.openapi/9.0.2/microsoft.aspnetcore.openapi.9.0.2.nupkg.sha512",
-    "/home/clay/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

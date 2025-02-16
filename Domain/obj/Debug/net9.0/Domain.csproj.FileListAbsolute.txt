@@ -9,3 +9,4 @@
 /home/clay/Events-Social-Network/Domain/obj/Debug/net9.0/refint/Domain.dll
 /home/clay/Events-Social-Network/Domain/obj/Debug/net9.0/Domain.pdb
 /home/clay/Events-Social-Network/Domain/obj/Debug/net9.0/ref/Domain.dll
+/home/clay/Events-Social-Network/Domain/obj/Debug/net9.0/Domain.sourcelink.json

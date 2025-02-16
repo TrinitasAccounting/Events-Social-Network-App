@@ -13,3 +13,4 @@
 /home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/refint/Persistence.dll
 /home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/Persistence.pdb
 /home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/ref/Persistence.dll
+/home/clay/Events-Social-Network/Persistence/obj/Debug/net9.0/Persistence.sourcelink.json

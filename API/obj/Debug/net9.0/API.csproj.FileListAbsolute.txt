@@ -37,3 +37,4 @@
 /home/clay/Events-Social-Network/API/obj/Debug/net9.0/API.pdb
 /home/clay/Events-Social-Network/API/obj/Debug/net9.0/API.genruntimeconfig.cache
 /home/clay/Events-Social-Network/API/obj/Debug/net9.0/ref/API.dll
+/home/clay/Events-Social-Network/API/obj/Debug/net9.0/API.sourcelink.json
