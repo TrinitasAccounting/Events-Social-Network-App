@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jDD0oskbdC0=",
+  "dgSpecHash": "Com3B4nYlMA=",
   "success": true,
   "projectFilePath": "/home/clay/Events-Social-Network/Application/Application.csproj",
   "expectedPackageFiles": [
+    "/home/clay/.nuget/packages/automapper/14.0.0/automapper.14.0.0.nupkg.sha512",
     "/home/clay/.nuget/packages/mediatr/12.4.1/mediatr.12.4.1.nupkg.sha512",
     "/home/clay/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/home/clay/.nuget/packages/microsoft.data.sqlite.core/9.0.2/microsoft.data.sqlite.core.9.0.2.nupkg.sha512",

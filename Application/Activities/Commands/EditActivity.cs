@@ -1,4 +1,5 @@
 using System;
+using AutoMapper;
 using Domain;
 using MediatR;
 using Persistence;
@@ -12,7 +13,7 @@ public class EditActivity
         public required Activitty Activity { get; set; }
     }
 
-    public class Handler(AppDbContext context) : IRequestHandler<Command>
+    public class Handler(AppDbContext context, IMapper mapper) : IRequestHandler<Command>
     {
         public async Task Handle(Command request, CancellationToken cancellationToken)
         {
@@ -22,8 +23,14 @@ public class EditActivity
             //The question marks do the same null check
             // if (activity == null) throw new Exception("Cannot find activity");
 
-            //Could go through and do this for all fields in the object
-            activity.Title = request.Activity.Title;
+            //Could go through and do this for all fields in the object,  instead of using the automapper
+            // activity.Title = request.Activity.Title;
+
+
+            //This effectively says, any property that matches inside of the passed in Activity (from command), if it matches a property in the var activity we found in our database, then it will update that property
+            mapper.Map(request.Activity, activity);
+
+
 
             await context.SaveChangesAsync(cancellationToken);
 

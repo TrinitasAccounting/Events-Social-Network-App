@@ -15,6 +15,7 @@ public class GetActivityList
     {
         public async Task<List<Activitty>> Handle(Query request, CancellationToken cancellationToken)
         {
+
             //Activities comes from our AppDbContext as we have a getter and setter there 
             return await context.Activities.ToListAsync(cancellationToken);
         }
