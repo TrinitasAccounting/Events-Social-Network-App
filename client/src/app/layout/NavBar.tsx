@@ -7,8 +7,12 @@ import Button from '@mui/material/Button';
 import { Container, MenuItem } from '@mui/material';
 import { Group } from '@mui/icons-material';
 
+type Props = {
+    openForm: () => void
+}
 
-export default function NavBar() {
+
+export default function NavBar({ openForm }: Props) {
 
 
     return (
@@ -36,7 +40,14 @@ export default function NavBar() {
                                 Contact
                             </MenuItem>
                         </Box>
-                        <Button size='large' variant='contained' color="warning">Create Activity</Button>
+                        <Button
+                            onClick={openForm}
+                            size='large'
+                            variant='contained'
+                            color="warning"
+                        >
+                            Create Activity
+                        </Button>
                     </Toolbar>
 
                 </Container>
