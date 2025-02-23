@@ -9,6 +9,8 @@ type Props = {
 
 export default function ActivityDetails({ activity, cancelSelectActivity, openForm }: Props) {
 
+    // const { activities } = useActivities();
+
     return (
         <Card sx={{ borderRadius: 3 }}>
             <CardMedia
