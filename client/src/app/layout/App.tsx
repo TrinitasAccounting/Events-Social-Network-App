@@ -1,11 +1,11 @@
 
-import { Box, Container, CssBaseline, Typography } from "@mui/material";
+import { Box, Container, CssBaseline } from "@mui/material";
 // import axios from "axios";
-import { useState } from "react"
+
 import NavBar from "./NavBar";
-import ActivityDashboard from "../../features/activities/dashboard/ActivityDashboard";
+import { Outlet } from "react-router";
 // import { useQuery } from "@tanstack/react-query";
-import { useActivities } from "../../lib/hooks/useActivities";
+
 
 
 
@@ -14,35 +14,13 @@ import { useActivities } from "../../lib/hooks/useActivities";
 function App() {
 
   // const [activities, setActivities] = useState<Activity[]>([]);
-  const [selectedActivity, setSelectedActivity] = useState<Activity | undefined>(undefined)
-  const [editMode, setEditMode] = useState(false);
+  // const [selectedActivity, setSelectedActivity] = useState<Activity | undefined>(undefined)
+  // const [editMode, setEditMode] = useState(false);
 
-  const { activities, isPending } = useActivities();
-
-
-  const handleSelectActivity = (id: string) => {
-    setSelectedActivity(activities!.find(x => x.id === id));
-  }
-
-  const handleCancelSelectActivity = () => {
-    setSelectedActivity(undefined)
-  };
+  // const { activities, isPending } = useActivities();
 
 
-  //Opening the form to Create or Edit an activity
-  const handleOpenForm = (id?: string) => {
-    if (id) {
-      handleSelectActivity(id);
-    }
-    else {
-      handleCancelSelectActivity();
-    }
-    setEditMode(true);
-  }
 
-  const handleFormClose = () => {
-    setEditMode(false);
-  }
 
 
 
@@ -54,23 +32,9 @@ function App() {
       {/* The CssBaseLine removes the tiny outside padding that the browser has set by default */}
       <CssBaseline />
 
-      <NavBar openForm={handleOpenForm} />
+      <NavBar />
       <Container maxWidth='xl' sx={{ mt: 3 }}>
-        {!activities || isPending ?
-          <Typography>Loading...</Typography>
-
-          :
-          <ActivityDashboard
-            activities={activities}
-            selectedActivity={selectedActivity}
-            selectActivity={handleSelectActivity}
-            cancelSelectActivity={handleCancelSelectActivity}
-            editMode={editMode}
-            openForm={handleOpenForm}
-            closeForm={handleFormClose}
-          />
-
-        }
+        <Outlet />
       </Container>
     </Box>
   )

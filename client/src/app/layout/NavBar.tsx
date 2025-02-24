@@ -7,12 +7,12 @@ import Button from '@mui/material/Button';
 import { Container, MenuItem } from '@mui/material';
 import { Group } from '@mui/icons-material';
 
-type Props = {
-    openForm: () => void
-}
+// type Props = {
+//     openForm: () => void
+// }
 
 
-export default function NavBar({ openForm }: Props) {
+export default function NavBar() {
 
 
     return (
@@ -41,7 +41,7 @@ export default function NavBar({ openForm }: Props) {
                             </MenuItem>
                         </Box>
                         <Button
-                            onClick={openForm}
+                            onClick={() => { }}
                             size='large'
                             variant='contained'
                             color="warning"
