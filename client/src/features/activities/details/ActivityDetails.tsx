@@ -1,15 +1,26 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
+import { useNavigate, useParams } from "react-router";
+import { useActivities } from "../../../lib/hooks/useActivities";
 
-type Props = {
-    activity: Activity,
-    cancelSelectActivity: () => void,
-    openForm: (id: string) => void
-}
+// type Props = {
+//     activity: Activity,
+//     cancelSelectActivity: () => void,
+//     openForm: (id: string) => void
+// }
 
 
-export default function ActivityDetails({ activity, cancelSelectActivity, openForm }: Props) {
+export default function ActivityDetails() {
+    const navigate = useNavigate();
+    //The useParams name of "id" need to match inside of our Routes, what place holder we have used for it. Using the ":XXXXX" in the route
+    const { id } = useParams();
 
-    // const { activities } = useActivities();
+    const { activity, isLoadingActivity } = useActivities(id);
+
+    if (isLoadingActivity) return <Typography>...Loading</Typography>
+
+
+    if (!activity) return <Typography>Activity not found</Typography>
+
 
     return (
         <Card sx={{ borderRadius: 3 }}>
@@ -23,8 +34,9 @@ export default function ActivityDetails({ activity, cancelSelectActivity, openFo
                 <Typography variant='body1'>{activity.description}</Typography>
             </CardContent>
             <CardActions>
-                <Button onClick={() => openForm(activity.id)} color='primary'>Edit</Button>
-                <Button onClick={cancelSelectActivity} color='inherit'>Cancel</Button>
+
+                <Button onClick={() => navigate(`/manage/${activity.id}`)} color='primary'>Edit</Button>
+                <Button onClick={() => navigate('/activities')} color='inherit'>Cancel</Button>
             </CardActions>
 
         </Card>

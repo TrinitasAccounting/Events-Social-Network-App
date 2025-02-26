@@ -2,7 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import agent from "../api/agent";
 
 
-export const useActivities = () => {
+export const useActivities = (id?: string) => {
     const queryClient = useQueryClient()
 
     //GET fetch
@@ -14,6 +14,19 @@ export const useActivities = () => {
             return response.data;
         }
     })
+
+
+    //GET fetch by ID
+    const { data: activity, isLoading: isLoadingActivity } = useQuery({
+        queryKey: ['activities', id],
+        queryFn: async () => {
+            const response = await agent.get<Activity>(`/activities/${id}`);
+            return response.data
+        },
+        //The line below is us telling React Query to not run the fetch every time, but only if we have a specific Id passed in
+        enabled: !!id
+    })
+
 
     //PUT fetch to edit or update an activity
     const updateActivity = useMutation({
@@ -32,7 +45,8 @@ export const useActivities = () => {
     const createActivity = useMutation({
 
         mutationFn: async (activity: Activity) => {
-            await agent.post('/activities', activity)
+            const response = await agent.post('/activities', activity)
+            return response.data
         },
         onSuccess: async () => {
             await queryClient.invalidateQueries({     //this is telling react query cache system, that when an activity is updated. To invalidate the cache of ['activities'] and go refetch it basically
@@ -61,7 +75,9 @@ export const useActivities = () => {
         isPending,
         updateActivity,
         createActivity,
-        deleteActivity
+        deleteActivity,
+        activity,
+        isLoadingActivity
     }
 
 
