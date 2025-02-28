@@ -3,7 +3,8 @@ import { Box, Container, CssBaseline } from "@mui/material";
 // import axios from "axios";
 
 import NavBar from "./NavBar";
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
+import HomePage from "../../features/home/HomePage";
 // import { useQuery } from "@tanstack/react-query";
 
 
@@ -20,8 +21,7 @@ function App() {
   // const { activities, isPending } = useActivities();
 
 
-
-
+  const location = useLocation();
 
 
 
@@ -31,11 +31,14 @@ function App() {
     <Box sx={{ bgcolor: '#eeeeee', minHeight: '100vh' }}>
       {/* The CssBaseLine removes the tiny outside padding that the browser has set by default */}
       <CssBaseline />
-
-      <NavBar />
-      <Container maxWidth='xl' sx={{ mt: 3 }}>
-        <Outlet />
-      </Container>
+      {location.pathname === '/' ? <HomePage /> : (
+        <>
+          <NavBar />
+          <Container maxWidth='xl' sx={{ mt: 3 }}>
+            <Outlet />
+          </Container>
+        </>
+      )}
     </Box>
   )
 }
