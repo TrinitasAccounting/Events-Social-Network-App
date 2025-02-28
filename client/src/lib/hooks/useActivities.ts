@@ -1,9 +1,11 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import agent from "../api/agent";
+import { useLocation } from "react-router";
 
 
 export const useActivities = (id?: string) => {
-    const queryClient = useQueryClient()
+    const queryClient = useQueryClient();
+    const location = useLocation();
 
     //GET fetch
     //React query code, to go and fetch our activities array and then store it in cache and continue to update it
@@ -12,7 +14,11 @@ export const useActivities = (id?: string) => {
         queryFn: async () => {
             const response = await agent.get<Activity[]>('/activities');
             return response.data;
-        }
+        },
+        //The below means that it will only be executed when we are on the /activities url path
+        enabled: !id && location.pathname === '/activities'
+        // This gives us the ability to control how long until react query marks the cache data as stale (the below is 5 minutes), the stale time does mean that until 5 mintues are up, the new activities added will not be updated until the stale time runs out
+        // staleTime: 1000 * 60 * 5
     })
 
 
