@@ -150,3 +150,5 @@
 /home/clay/Events-Social-Network/API/bin/Debug/net9.0/MediatR.dll
 /home/clay/Events-Social-Network/API/bin/Debug/net9.0/MediatR.Contracts.dll
 /home/clay/Events-Social-Network/API/bin/Debug/net9.0/AutoMapper.dll
+/home/clay/Events-Social-Network/API/bin/Debug/net9.0/FluentValidation.dll
+/home/clay/Events-Social-Network/API/bin/Debug/net9.0/FluentValidation.DependencyInjectionExtensions.dll

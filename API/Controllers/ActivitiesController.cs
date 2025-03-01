@@ -1,5 +1,6 @@
 using System;
 using Application.Activities.Commands;
+using Application.Activities.DTOs;
 using Application.Activities.Queries;
 using Domain;
 using MediatR;
@@ -34,14 +35,23 @@ public class ActivitiesController : BaseApiController
         //___________________________
 
 
-        return await Mediator.Send(new GetActivityDetails.Query { Id = id });
+        return HandleResult(await Mediator.Send(new GetActivityDetails.Query { Id = id }));
+
+        //This was moved to the BaseApiController, but we could simply write this type of logic for each Http Request. And would not need the HandleResult portion above______
+        // if (!result.IsSuccess && result.Code == 404) return NotFound();
+
+        // if (result.IsSuccess && result.Value != null) return result.Value;
+
+        // return BadRequest(result.Error);
+
+
     }
 
 
     [HttpPost]
-    public async Task<ActionResult<string>> CreateActivity(Activitty activitty)
+    public async Task<ActionResult<string>> CreateActivity(CreateActivityDto activityDto)
     {
-        return await Mediator.Send(new CreateActivity.Command { Activity = activitty });
+        return await Mediator.Send(new CreateActivity.Command { ActivityDto = activityDto });
     }
 
 

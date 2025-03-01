@@ -1,5 +1,9 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using Application.Activities.DTOs;
+using AutoMapper;
 using Domain;
+using FluentValidation;
 using MediatR;
 using Persistence;
 
@@ -9,19 +13,21 @@ public class CreateActivity
 {
     public class Command : IRequest<string>
     {
-        public required Activitty Activity { get; set; }
+        public required CreateActivityDto ActivityDto { get; set; }
     }
 
-    public class Hanlder(AppDbContext context) : IRequestHandler<Command, string>
+    public class Hanlder(AppDbContext context, IMapper mapper) : IRequestHandler<Command, string>
     {
         public async Task<string> Handle(Command request, CancellationToken cancellationToken)
         {
+
+            var activity = mapper.Map<Activitty>(request.ActivityDto);
             //This is where our logic for creating an activity is programmed
-            context.Activities.Add(request.Activity);
+            context.Activities.Add(activity);
 
             await context.SaveChangesAsync(cancellationToken);
 
-            return request.Activity.Id;
+            return activity.Id;
         }
     }
 }
